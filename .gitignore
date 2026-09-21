@@ -1,4 +1,6 @@
-# Logs
+node_modules/
+dist/
+coverage/# Logs
 logs
 *.log
 npm-debug.log*

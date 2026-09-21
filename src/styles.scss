@@ -1,0 +1,242 @@
+.vide-works-status,
+.vide-works-list,
+.vide-work-detail {
+  margin: 2rem auto;
+  max-width: 72rem;
+  padding: 0 1.25rem;
+}
+
+.vide-works-error {
+  color: #9d1c1c;
+}
+
+.vide-works-list ol,
+.vide-work-relations ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vide-works-list li + li,
+.vide-work-relations li + li {
+  border-top: 1px solid #d5d1c9;
+}
+
+.vide-works-list button,
+.vide-work-relations button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 0;
+  text-align: left;
+  width: 100%;
+}
+
+.vide-works-title,
+.vide-work-relations button span:first-child {
+  font-weight: 700;
+}
+
+.vide-works-back {
+  background: none;
+  border: 0;
+  color: #734410;
+  cursor: pointer;
+  padding: 0;
+}
+
+.vide-work-timeline {
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.vide-work-movement-ruler {
+  height: 33px;
+  margin-top: 10rem;
+  min-width: 48rem;
+  position: relative;
+}
+
+.vide-work-movement-ruler::before {
+  background: #8e867b;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+.vide-work-timeline-track {
+  height: 8px;
+  left: 0;
+  min-width: 48rem;
+  position: relative;
+  width: 100%;
+}
+
+.vide-work-movement-ruler .vide-work-timeline-track {
+  position: absolute;
+}
+
+.vide-work-complete-movement-track {
+  top: 7px;
+}
+
+.vide-work-restricted-range-track {
+  top: 16px;
+}
+
+.vide-work-movement {
+  border-left: 1px solid #8e867b;
+  box-sizing: border-box;
+  height: 32px;
+  min-width: 1px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.vide-work-movement-label {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  max-width: 12rem;
+  padding-left: 0.3rem;
+  position: absolute;
+  left: -7px;
+  top: -10px;
+  transform: rotate(-30deg);
+  transform-origin: left top;
+  white-space: nowrap;
+}
+
+.vide-work-movement-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vide-work-movement-counts {
+  display: none;
+}
+
+.vide-work-movement-ruler.is-hovering .vide-work-movement:not(.is-hovered) .vide-work-movement-label {
+  color: #9d9589;
+}
+
+.vide-work-movement.is-hovered .vide-work-movement-counts {
+  display: block;
+}
+
+.vide-work-movement.is-hovered .vide-work-movement-label {
+  backdrop-filter: blur(5px);
+  background: #ffffff66;
+  border: 0.5px solid #333333;
+  border-radius: 0.4rem;
+  margin: -0.5rem;
+  padding: 0.5rem;
+}
+
+.vide-work-movement.is-hovered {
+  z-index: 2;
+}
+
+.vide-work-relation-region {
+  background: rgba(190, 29, 29, 0.22);
+  border: 0;
+  bottom: 0;
+  cursor: pointer;
+  min-width: 1px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+
+.vide-work-relation-region:hover,
+.vide-work-relation-region:focus-visible {
+  background: rgba(190, 29, 29, 0.42);
+  outline: 2px solid #9d1c1c;
+  outline-offset: -2px;
+}
+
+.vide-work-relations {
+  margin-top: 2rem;
+}
+
+.vide-work-relations ol {
+  font-size: 0.75rem;
+}
+
+.vide-work-relation {
+  align-items: start;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1rem minmax(10rem, 16rem) minmax(0, 1fr);
+  padding: 0.5rem 0;
+}
+
+.vide-work-relations .vide-work-relation-metadata {
+  font-size: inherit;
+  padding: 0;
+}
+
+.vide-work-relation-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  height: 1rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 1rem;
+}
+
+.vide-work-relation-toggle span {
+  border-bottom: 0.3rem solid transparent;
+  border-left: 0.4rem solid #734410;
+  border-top: 0.3rem solid transparent;
+  height: 0;
+  transition: transform 120ms ease;
+  width: 0;
+}
+
+.vide-work-relation-toggle[aria-expanded="true"] span {
+  transform: rotate(90deg);
+}
+
+.vide-work-relations .is-selected {
+  background: #f7e6e2;
+}
+
+.vide-work-source {
+  grid-column: 3;
+  margin: 0;
+  max-width: 100%;
+}
+
+.vide-work-source svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.vide-work-source .supplied {
+  fill: #999999;
+  stroke: #999999;
+}
+
+@media (max-width: 44rem) {
+  .vide-work-relation {
+    grid-template-columns: 1rem minmax(0, 1fr);
+  }
+
+  .vide-work-source {
+    grid-column: 2;
+  }
+}

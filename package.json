@@ -1,0 +1,47 @@
+{
+  "name": "vide-component-works",
+  "version": "1.0.0",
+  "description": "Reusable works overview Web Component for Beethoven's Workshop.",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "files": [
+    "src/",
+    "dist/",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "mkdir -p dist && esbuild src/index.js --bundle --format=esm --target=es2022 --outfile=dist/index.js",
+    "build:css": "mkdir -p dist && sass src/styles.scss dist/vide-works.css --no-source-map",
+    "watch:css": "mkdir -p dist && sass src/styles.scss dist/vide-works.css --no-source-map --watch",
+    "lint": "eslint src/**/*.js tests/**/*.js",
+    "lint:fix": "eslint src/**/*.js tests/**/*.js --fix",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "works",
+    "web-component",
+    "MEI",
+    "visualization"
+  ],
+  "author": "Johannes Kepper",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "lit": "^3.3.2"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "esbuild": "^0.25.9",
+    "happy-dom": "^20.0.11",
+    "sass": "1.69.5",
+    "vitest": "^4.0.16"
+  }
+}
